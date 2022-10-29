@@ -1,13 +1,14 @@
-import styled from "styled-components"
-
-const Title = styled.h1`
-  color: blue
-`
+import Dashboard from "./components/Dashboard";
+import Header from "./components/Header";
+import { GlobalStyle } from "./styles/global";
 
 export default function App() {
   return (
     <>
-      <Title>oiii</Title>
+      <GlobalStyle/>
+      
+      <Header/>
+      <Dashboard/>
     </>
   )
 }
