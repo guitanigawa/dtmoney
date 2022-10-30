@@ -22,7 +22,7 @@ export const Block = styled.div`
 
     strong{
         display: block;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         font-size: 2rem;
         font-weight: 500;
         line-height: 3rem
