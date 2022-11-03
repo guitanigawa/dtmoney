@@ -1,22 +1,12 @@
-import { useState } from "react"
 import { Container, Content } from "./styles"
-import Modal from "react-modal"
 
 import logoImg from "../../assets/logo.svg"
 
-export default function Header(){
-    const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false)
+interface HeaderProps{
+    onOpenNewTransactionModal: () => void
+}
 
-    function handleOpenNewTransactionModal(){ 
-        setIsNewTransactionModalOpen(true)
-    }
-
-    function handleCloseNewTransactionModal(){ 
-        setIsNewTransactionModalOpen(false)
-    }
-
-
-
+export default function Header({ onOpenNewTransactionModal }: HeaderProps){
     return(
         <Container>
             <Content>
@@ -24,18 +14,13 @@ export default function Header(){
                 
                 <button 
                     type="button" 
-                    onClick={handleOpenNewTransactionModal}
+                    onClick={onOpenNewTransactionModal}
                 >
                     Nova transação
                 </button>
 
 
-                <Modal 
-                    isOpen={isNewTransactionModalOpen}
-                    onRequestClose={handleCloseNewTransactionModal}
-                >
-                    <h1>oi</h1>
-                </Modal>
+                
             </Content>
         </Container>
 

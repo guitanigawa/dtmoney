@@ -27,6 +27,14 @@ export const Container = styled.main`
                 color: var(--text-title)
             }
 
+            &.deposit{
+                color: green
+                }
+
+            &.withdraw{
+                color: red
+            }
+
         }
     }
 `
