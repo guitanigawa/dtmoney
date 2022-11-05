@@ -4,7 +4,7 @@ export const Container = styled.main`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: -8rem
+    margin-top: -7rem
 
 `
 
@@ -30,16 +30,23 @@ export const Block = styled.div`
 `
 
 interface TotalBlockProps{
-    bgColor: "green" | "red" | "gray"
+    bgColor: number
 }
 
 const colors = {
     green: "#33CC95",
-    red: "#E62E4D",
-    gray: "black"
+    red: "#E62E4D"
 }
 
 export const TotalBlock = styled(Block)`
-    background: ${(props: TotalBlockProps)=> colors[props.bgColor]};
+    background: ${(props: TotalBlockProps)=>{
+        if(props.bgColor === 0){
+            return "gray"
+        }else if(props.bgColor > 0){
+            return colors.green
+        }else{
+            return colors.red
+        }
+    }};
     color: var(--shape)
 `

@@ -5,10 +5,10 @@ import incomeImg from "../../assets/income.svg"
 import outcomeImg from "../../assets/outcome.svg"
 import totalImg from "../../assets/total.svg"
 
-import { TransactionsContext } from "../../TransactionsContext";
+import { useTransactions } from "../../hooks/useTransactions";
 
 export default function Summary(){
-    const { transactions } = useContext(TransactionsContext)
+    const { transactions } = useTransactions()
 
     // const [incomes, setIncomes] = useState(0)
     // const [outcomes, setOutcomes] = useState(0)
@@ -90,15 +90,7 @@ export default function Summary(){
                 </strong>
             </Block>
             
-            <TotalBlock bgColor={()=>{
-                if(summary.total === 0){
-                    return "gray"
-                }else if(summary.total > 0){
-                    return "green"
-                }else{
-                    return "red"
-                }
-            }}>
+            <TotalBlock bgColor={summary.total}>
                 <header>
                     <p>Total</p>
                     <img src={totalImg} alt="totalImg"/>                 
