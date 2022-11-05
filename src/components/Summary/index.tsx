@@ -1,4 +1,3 @@
-import { useContext, useState, useEffect } from "react";
 import { Container, Block, TotalBlock } from "./styles";
 
 import incomeImg from "../../assets/income.svg"
