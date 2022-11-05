@@ -28,3 +28,18 @@ export const Block = styled.div`
         line-height: 3rem
     }   
 `
+
+interface TotalBlockProps{
+    bgColor: "green" | "red" | "gray"
+}
+
+const colors = {
+    green: "#33CC95",
+    red: "#E62E4D",
+    gray: "black"
+}
+
+export const TotalBlock = styled(Block)`
+    background: ${(props: TotalBlockProps)=> colors[props.bgColor]};
+    color: var(--shape)
+`
